@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rest-connector xmlns="http://www.softwareag.com/cloudstreams/metadata/handler/model" id="gdata" version="1.0" name="Gdata" displayName="Gdata">
+    <connections>
+        <connection type="sagcloud" name="SAG_Connection" displayName="SAG_Connection">
+            <groups>
+                <group type="connection" name="connection" displayName="Connection">
+                    <description>Define the required connection configurations to initiate communication with the SaaS provider.</description>
+                    <fields>
+                        <field isRequired="true" isEncrypted="false" isHidden="false" isArray="false" defaultValue="https://reqres.in" name="cn.providerUrl" displayName="Server URL">
+                            <description>The native provider endpoint target for the connection configuration</description>
+                        </field>
+                    </fields>
+                </group>
+            </groups>
+        </connection>
+    </connections>
+    <services>
+        <service xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="RESTServiceType" endpoint="${cn.providerUrl}" name="default_resourcegroup" displayName="Default_ResourceGroup">
+            <documentModel packageName="." nsName="gdata.default_resourcegroup.doctypes" useInlineModel="true"/>
+            <resources>
+                <mappings/>
+                <resource method="GET" path="/api/users" type="SIMPLE" name="gettest" displayName="test">
+                    <mappings/>
+                    <parameters>
+                        <parameter name="page" isRequired="true" style="QUERYSTRING_PARAM" defaultValue="2"/>
+                    </parameters>
+                    <responses>
+                        <response name="response" code="200" messageFormatterType="application/octet+idataoref" builderType="application/json" documentRef="doc:response" excludeRoot="true" dimension="0"/>
+                    </responses>
+                </resource>
+            </resources>
+        </service>
+    </services>
+</rest-connector>

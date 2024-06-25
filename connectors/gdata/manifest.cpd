@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Connector-Key: gdata
+Connector-Name: Gdata
+Connector-Version: 1.0
+Connector-Handler: com.softwareag.cloudstreams.metadata.handler.rest.Res
+ tConnectorMetadataHandler
+Connector-State: Enabled
+Connector-Bundle-Vendor: VNA
+Connector-Bundle-Version: 1.0
+Connector-Group: 
+Connector-Group-ID: gdata
+Connector-Group-Version: 1.0
+Project: 
+
+Name: User-Defined
+Application-Version: 2.0
+Connector-Type: Custom
+applicationImageID: 
+
